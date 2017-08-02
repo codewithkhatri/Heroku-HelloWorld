@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const knex = require('./knex');
 const morgan = require('morgan');
 
 const app = express();

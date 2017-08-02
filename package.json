@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "nodemon": "nodemon index.js",
+    "knex": "knex"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,8 @@
   "homepage": "https://github.com/jamiesonbates/heroku-hello-world#readme",
   "dependencies": {
     "express": "^4.15.3",
-    "morgan": "^1.8.2"
+    "knex": "^0.13.0",
+    "morgan": "^1.8.2",
+    "pg": "^7.0.2"
   }
 }
