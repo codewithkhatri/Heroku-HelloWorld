@@ -107,3 +107,28 @@ git br -d heroku
 git push heroku master
 ```
 *NOTE:* git will only push changes that have been committed.
+
+12. Inspect the production environment again and seed your database.
+Inspect the results of the following:
+```
+heroku apps:info
+heroku pg:info
+```
+Login to the production database and verify that your migrations and seeds have run properly
+```
+heroku pg:psql
+
+`SELECT * FROM cities`
+```
+
+*NOTE:* you should see a list of cities as results.
+
+Print your server logs (what is happening in the server):
+```
+heroku logs
+```
+
+Send an httpie request to GET cities
+```
+http GET localhost:8000/cities
+```
