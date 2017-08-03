@@ -33,7 +33,7 @@ node -v
 Add the following code to your package.json file. Place the version number where 'DEV_VERSION' is currently:
 ```json
 "engines": {
-  "NODE": "_DEV_VERSION_"
+  "node": "_DEV_VERSION_"
 }
 ```
 
