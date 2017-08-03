@@ -60,7 +60,6 @@ production: {
 7. Add a script in `package.json` so that Heroku automatically migrates your database.
 ```json
 "scripts": {
-  "knex": "knex",
   "heroku-postbuild": "knex migrate:latest"
 }
 ```
