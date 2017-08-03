@@ -114,6 +114,12 @@ Inspect the results of the following:
 heroku apps:info
 heroku pg:info
 ```
+
+Seed your production database:
+```
+heroku run knex seed:run
+```
+
 Login to the production database and verify that your migrations and seeds have run properly
 ```
 heroku pg:psql
