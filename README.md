@@ -1,19 +1,18 @@
 # Deploy an application to Heroku
 
-## Steps
+### Steps
 
-1. Clone this repo and create a new branch
+1. Clone the repo and create a new branch
 ```
 git clone https://github.com/jamiesonbates/heroku-hello-world
 cd heroku-hello-world
-npm install
 git checkout -b heroku
 ```
 *NOTE:* you should be in the project directory when deploying to Heroku.
 
 2. Create a "Heroku app" (replace USERNAME with your name)
 ```
-heroku apps:create USERNAME-trackify
+heroku apps:create USERNAME-heroku-hello-world
 ```
 
 *NOTE:* if you do not have a Heroku account, create one. If you have never deployed to Heroku from the command line before, you may have to sign in with your Heroku credentials.
@@ -33,7 +32,7 @@ node -v
 Add the following code to your package.json file. Place the version number where 'DEV_VERSION' is currently:
 ```json
 "engines": {
-  "node": "_DEV_VERSION_"
+  "NODE": "_DEV_VERSION_"
 }
 ```
 
@@ -60,6 +59,7 @@ production: {
 7. Add a script in `package.json` so that Heroku automatically migrates your database.
 ```json
 "scripts": {
+  "knex": "knex",
   "heroku-postbuild": "knex migrate:latest"
 }
 ```
@@ -82,7 +82,7 @@ Update the scripts section of your `package.json` file so that it looks as follo
   "knex": "knex",
   "heroku-postbuild": "knex migrate:latest",
   "nf": "nf start",
-  "start": "nodemon server.js"
+  "nodemon": "nodemon index.js"
 },
 ```
 
@@ -114,12 +114,6 @@ Inspect the results of the following:
 heroku apps:info
 heroku pg:info
 ```
-
-Seed your production database:
-```
-heroku run knex seed:run
-```
-
 Login to the production database and verify that your migrations and seeds have run properly
 ```
 heroku pg:psql
@@ -127,7 +121,12 @@ heroku pg:psql
 `SELECT * FROM cities`
 ```
 
-*NOTE:* you should see a list of cities as results.
+*NOTE:* you won't see a list of cities as results.
+
+Seed your database:
+```
+heroku run knex seed:run 
+```
 
 Print your server logs (what is happening in the server):
 ```
