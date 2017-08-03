@@ -135,5 +135,5 @@ heroku logs
 
 Send an httpie request to GET cities
 ```
-http GET localhost:8000/cities
+http GET <INSERT NAME OF APP HERE>.herokuapp.com
 ```
