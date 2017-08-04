@@ -6,6 +6,7 @@
 ```
 git clone https://github.com/jamiesonbates/heroku-hello-world
 cd heroku-hello-world
+npm install
 git checkout -b heroku
 ```
 *NOTE:* you should be in the project directory when deploying to Heroku.
